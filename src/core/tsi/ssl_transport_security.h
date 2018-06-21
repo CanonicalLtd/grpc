@@ -149,6 +149,9 @@ struct tsi_ssl_client_handshaker_options {
   size_t num_alpn_protocols;
   /* ssl_session_cache is a cache for reusable client-side sessions. */
   tsi_ssl_session_cache* session_cache;
+  /* server_certificate_request, if set to TSI_REQUEST_SERVER_CERTIFICATE_BUT_DONT_VERIFY
+   * it will ignore any certificate verification errors */
+  tsi_server_certificate_request_type server_certificate_request;
 
   /* skip server certificate verification. */
   bool skip_server_certificate_verification;
@@ -166,6 +169,7 @@ struct tsi_ssl_client_handshaker_options {
         num_alpn_protocols(0),
         session_cache(nullptr),
         skip_server_certificate_verification(false),
+        server_certificate_request(TSI_REQUEST_SERVER_CERTIFICATE_AND_VERIFY),
         min_tls_version(tsi_tls_version::TSI_TLS1_2),
         max_tls_version(tsi_tls_version::TSI_TLS1_3) {}
 };
