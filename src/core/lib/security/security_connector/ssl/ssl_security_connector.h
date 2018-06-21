@@ -33,7 +33,9 @@ struct grpc_ssl_config {
   tsi_ssl_pem_key_cert_pair* pem_key_cert_pair;
   char* pem_root_certs;
   verify_peer_options verify_options;
+  tsi_server_certificate_request_type server_request_type;
 };
+
 /* Creates an SSL channel_security_connector.
    - request_metadata_creds is the credentials object which metadata
      will be sent with each request. This parameter can be NULL.
