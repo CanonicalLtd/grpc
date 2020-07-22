@@ -168,8 +168,8 @@ struct tsi_ssl_client_handshaker_options {
         alpn_protocols(nullptr),
         num_alpn_protocols(0),
         session_cache(nullptr),
-        skip_server_certificate_verification(false),
         server_certificate_request(TSI_REQUEST_SERVER_CERTIFICATE_AND_VERIFY),
+        skip_server_certificate_verification(false),
         min_tls_version(tsi_tls_version::TSI_TLS1_2),
         max_tls_version(tsi_tls_version::TSI_TLS1_3) {}
 };
