@@ -163,8 +163,8 @@ struct tsi_ssl_client_handshaker_options {
         alpn_protocols(nullptr),
         num_alpn_protocols(0),
         session_cache(nullptr),
+        server_certificate_request(TSI_REQUEST_SERVER_CERTIFICATE_AND_VERIFY),
         skip_server_certificate_verification(false) {}
-        server_certificate_request(TSI_REQUEST_SERVER_CERTIFICATE_AND_VERIFY) {}
 };
 
 /* Creates a client handshaker factory.
